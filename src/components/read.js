@@ -14,6 +14,15 @@ export default function Read() {
   };
   const onDelete = (id) => {
     axios.delete(`https://640975e26ecd4f9e18b11e7a.mockapi.io/fakeData/${id}`);
+    setTimeout(() => {
+      console.log("HGFHFGHFGHFGH");
+
+      axios
+        .get(`https://640975e26ecd4f9e18b11e7a.mockapi.io/fakeData`)
+        .then((response) => {
+          setAPIData(response.data);
+        });
+    }, 500);
   };
 
   useEffect(() => {
